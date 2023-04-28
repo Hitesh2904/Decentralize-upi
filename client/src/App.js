@@ -1,7 +1,8 @@
 import abi from "./contract/vendor.json"
 import {useState,useEffect} from 'react';
 import {ethers} from "ethers";
-
+import Buy from "./components/Buy"
+import Memos from "./components/Memos";
 import './App.css';
 
 function App() {
@@ -35,9 +36,14 @@ function App() {
     };
     connectWallet();
   },[]);
-  console.log(state);
+  // console.log(state);
 
-  return (<div className="App"></div>);
+  return (
+  <div className="App">
+    <Buy state = {state}></Buy>
+    <Memos state = {state}></Memos>
+  </div>
+  );
 }
 
 export default App;
