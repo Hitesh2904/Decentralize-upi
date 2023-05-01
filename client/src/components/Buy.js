@@ -12,17 +12,44 @@ const Buy = ({state})=>
         const amount = {value:ethers.utils.parseEther("0.001")};
         const transaction = await contract.buy(name,message,amount);
         await transaction.wait();
-        console.log("transaction is done");
+        console.log("Transaction is done");
     };
 
-    return<>
-    <form onSubmit = {buy}> 
-        <label>Name</label>
-        <input type="text" id="name" placeholder = "Enter your name"></input>
-        <label>Message</label>
-        <input type="text" id="message" placeholder = "Enter your Message"></input>
-        <button type="submit">Pay</button>
-    </form>
-    </>
-}
+    return(
+        <>
+        <div className="container-md" style={{ width: "50%", marginTop: "25px" }}>
+            <form onSubmit = {buy}> 
+            <div className ="mb-3">
+                <label className="form-label">Name</label>
+                <input
+                    type="text"
+                    className="form-control"
+                    id="name"
+                    placeholder="Enter Your Name"
+                />
+            </div>
+
+            <div className="mb-3">
+            <label className="form-label">Message</label>
+            <input
+              type="text"
+              className="form-control"
+              id="message"
+              placeholder="Enter Your Message"
+            />
+            </div>
+
+            <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={!state.contract}
+            >
+                Pay
+            </button>
+            
+            </form>
+        </div>    
+        </>
+    ); 
+};
 export default Buy;
