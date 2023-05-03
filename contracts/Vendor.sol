@@ -10,6 +10,7 @@ contract vendor
         string message;
         uint timestamp;
         address from;
+        uint Amount;
     }
 
     Memo[] memos;
@@ -23,7 +24,7 @@ contract vendor
     {
         require(msg.value>0 , "Please enter Valid Amount ");
         owner.transfer(msg.value);
-        memos.push(Memo(name,message,block.timestamp,msg.sender));
+        memos.push(Memo(name,message,block.timestamp,msg.sender,msg.value));
     }
 
     function getMemos() public view returns(Memo[] memory)
