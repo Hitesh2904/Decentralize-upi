@@ -9,10 +9,17 @@ const Buy = ({state})=>
         const message = document.querySelector("#message").value;
         console.log(name,message,contract);
 
-        const amount = {value:ethers.utils.parseEther("0.001")};
+        const money = document.querySelector("#amount").value;
+
+        if(money > 0){
+        const amount = {value: ethers.utils.parseEther(money)};
         const transaction = await contract.buy(name,message,amount);
         await transaction.wait();
         console.log("Transaction is done");
+        }
+        else {
+            alert("Please Enter a Valid Amount");
+        }
     };
 
     return(
@@ -36,6 +43,17 @@ const Buy = ({state})=>
               className="form-control"
               id="message"
               placeholder="Enter Your Message"
+            />
+            </div>
+
+            <div className="mb-3">
+            <label className="form-label">Amount</label>
+            <input
+              type="number"
+              step="0.0001"
+              className="form-control"
+              id="amount"
+              placeholder="Enter Amount"
             />
             </div>
 
