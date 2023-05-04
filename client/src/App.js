@@ -17,7 +17,7 @@ function App() {
   const [account, setAccount] = useState("None");
   useEffect(()=> {
     const connectWallet = async () => {
-      const contractAddress ="0xfb407e71a906c1891584cb05187d27aa049a1a79";
+      const contractAddress ="0x654c3bB6CE2BD788B83B01B83BF794f32f6B309C";
       const contractABI = abi.abi;
       
       try{
@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div style={{ backgroundColor: "#EFEFEF", height: "100%" }}>
-      <img src={photo} className="img-fluid" alt=".." width="100%" />
+      <img src={photo} className="img-fluid" alt="Ether-pay banner" width="100%" />
       <p
         class="text-muted lead "
         style={{ marginTop: "10px", marginLeft: "5px" }}
