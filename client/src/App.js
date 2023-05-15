@@ -50,7 +50,8 @@ function App() {
   // console.log(state);
 
   return (
-    <div style={{ backgroundColor: "#EFEFEF", height: "100%" }}>
+    // <div style={{ backgroundColor: "#EFEFEF", height: "100%" }}>
+    <div style={{ background: "linear-gradient(-45deg, #ffd2e1, #ffa59c,#DDA0DD)", height: "100%" }}>
       <img src={photo} className="img-fluid" alt="Ether-pay banner" width="100%" />
       <p
         class="text-muted lead "
